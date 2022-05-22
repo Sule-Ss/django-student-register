@@ -3,11 +3,9 @@
 
 {% block container %}
     <form action="" method="POST">
-        <p>Are You Sure!</p>
+        <p style="text-align:center">Are You Sure!</p>
         {% csrf_token %}
         <input type="submit" value="Yes">
+        <a  href="{% url 'list' %}"><input type="button" value="No"></a>
     </form>
-    <a href="{% url 'list' %}">
-        <button>No</button>
-    </a>
 {% endblock container %}

@@ -1,8 +1,8 @@
 {% extends 'register/base.html' %}
 
 {% block container %}
-    <h2>Update Student</h2>
     <form action="" method="POST">
+    <h1>Student Update</h1>
         {% csrf_token %}                   
         {{form.as_p}}						   
         <input type="submit" value="update">

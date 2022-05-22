@@ -1,10 +1,13 @@
+
+/*  CARD  */
 .html, .body {
     width: 100%;
     height: 100%;
  }
   .body {
     display: flex;
-    /* align-items: center; */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
  }
 
@@ -29,7 +32,7 @@
     position: relative;
     text-align: center;
     overflow: hidden;
-    width: 230px;
+    min-width: 230px;
  }
   .card.card--front {
     backface-visibility: hidden;
@@ -98,3 +101,31 @@
     position: relative;
     top: 20px;
  }
+
+/* BUTTONS  */
+
+ .buttons{
+   display: flex;
+ }
+ 
+ button {background-image: linear-gradient(to right, #FF512F 0%, #7e1475  51%, #371db6  100%)}
+ button {
+    margin: 1rem 2rem;
+    padding: 0.7rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    border-color: white;
+    display: block;
+    cursor: pointer;
+  }
+ 
+  button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }

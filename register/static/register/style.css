@@ -6,7 +6,7 @@ form {
     background: #f7f7f7;
   }
   form h1 {
-    background: #43d1af;
+    background: #9385D3;
     padding: 20px 0;
     font-size: 140%;
     font-weight: 300;
@@ -52,38 +52,55 @@ form {
   #id_phone_number:focus,
   form textarea:focus,
   form select:focus {
-    box-shadow: 0 0 5px #43d1af;
+    box-shadow: 0 0 5px #7e43d1;
     padding: 3%;
-    border: 1px solid #43d1af;
+    border: 1px solid #c843d1;
   }
 
   form input[type="submit"],
-  form input[type="button"] {
+  form input[type="button"],
+  .noButton {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     width: 100%;
     padding: 3%;
-    background: #43d1af;
-    border-bottom: 2px solid #30c29e;
+    background: #9457ea;
+    border-bottom: 2px solid #6528ba;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
     color: #fff;
   }
   form input[type="submit"]:hover,
-  form input[type="button"]:hover {
-    background: #2ebc99;
+  form input[type="button"]:hover,
+  .noButton:hover {
+    background: #c843d1;
     cursor: pointer;
   }
 
   /* LIST STUDENT  */
+
+  .listContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* width: 10rem; */
+  }
 
   ol {
     counter-reset: li; 
     list-style: none; 
     padding: 0;
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    min-width: 40rem;
+  }
+
+  ol li{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem;
   }
   
   ol a {
@@ -121,7 +138,7 @@ form {
   /* NAVBAR */
 
   .navColor{
-    background-color: #43D1AF;
+    background-color: #382e64;
     color: wheat;
     border: none;
     position: sticky;
@@ -133,6 +150,10 @@ form {
 
   .navColor a:hover{
     color: #0b504f;
+  }
+
+  .spanColor{
+    background-color: white;
   }
  
   

@@ -2,10 +2,8 @@
 {% load static %}
 
 {% block container %}
-    {{student.full_name}} - {{student.path}} {{student.phone_number}} {{ student.mail }} {{ student.student_number }} {{ student.gender }}
-    <br>
-    <a href="{% url 'update' student.id %}"><button>Update</button></a>
-    <a href="{% url 'delete' student.id %}"><button>Delete</button></a>
+  
+
 
 <link rel="stylesheet" href=" {% static 'register/detail.css' %}  " />
 <div class="html">
@@ -14,24 +12,30 @@
   <div class="card__container">
     <div class="card card--front">
       <img src="http://builtbybuffalo.com/uploads/images/300/460264537.jpg" alt="">
-      <h1>Gilles K</h1>
-      <h2>Front-end &amp; Fun</h2>
-      <p>Currently working and living in Luxembourg. Let's catch up!</p>
-      <div class="flip"><span>NOWNOW</span></div>
+      <h1>{{student.full_name}}</h1>
+      <h2>{{student.path}} </h2>
+      <p>{{ student.gender }}</p>
+      <div class="flip"><span>IT</span></div>
     </div>
     <div class="card card--back">
       <dl>
-        <dt>Learning Vuejs</dt>
-        <dd>I have switched from learning React to learning Vuejs. And I like 😎</dd>
-        <dt>Work Life Balance</dt>
-        <dd>I try to maintain a healthy work/life balance. I try to get in early, work my 8 hours and get out to enjoy the sun!</dd>
-        <dt>Sports</dt>
-        <dd>I joined a triathlon club. These people are amazing. They do a different sport everyday. And they are good in all of them!</dd>
+        <dt>Student Number</dt>
+        <dd>{{ student.student_number }}</dd>
+        <br>
+        <dt>Phone Number</dt>
+        <dd>{{student.phone_number}} 😎</dd>
+        <br>
+        <dt>Student Mail :</dt>
+        <dd>{{ student.mail }} </dd>
       </dl>
     </div> 
   </div>
+</div class="buttons">
+    <a href="{% url 'update' student.id %}"><button class="updateButton">Update</button></a>
+    <a href="{% url 'delete' student.id %}"><button class="deleteButton">Delete</button></a>
 </div>
 </div>
 </div>
+
 
 {% endblock container %}

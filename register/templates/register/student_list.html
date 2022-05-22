@@ -1,13 +1,17 @@
 {% extends 'register/base.html' %}
 
 {% block container %}
+<div class="listContainer">
+<h2>Student List</h2>
 <ol>
+    <li><span>Full Name</span> <span>Student Path</span></li>
     {% for student in students%}
     <a href="{% url 'detail' student.id  %}">
-    <li>{{ student.full_name }} : {{student.path}} </li>
+    <li><span>{{ student.full_name }} </span> <span> {{student.path}}</span> </li>
     </a>
     {%endfor%}
 </ol>
+</div>
 
 
 {% endblock container %}
