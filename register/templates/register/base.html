@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href=" {% static 'fscohort/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href=" {% static 'register/style.css' %}  " />
+    <title>Register App</title>
+  </head>
+  <body>
+    {% comment %} {% include "users/navbar.html" %} {% endcomment %}
+     <nav class="navbar navColor">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target="#myNavbar"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'add' %}">Register</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              {% comment %} <li class="active"><a href="{% url 'add' %}">Register</a></li> {% endcomment %}
+              <li><a href="{% url 'list' %}">Student List</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="#"
+                  ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><span class="glyphicon glyphicon-log-in"></span> Login</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+
+      {% block container %}
+      {% endblock container %} 
+      {% if messages %} 
+      {% for message in messages %} 
+    {% if message.tags == "error" %}
+      <div class="alert alert-danger">{{ message }}</div>
+      {% else %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endif %}
+       {% endfor %} 
+       {% endif %}
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'store/js/timeout.js' %}"></script>
+  </body>
+</html>

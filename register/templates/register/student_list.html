@@ -1,0 +1,13 @@
+{% extends 'register/base.html' %}
+
+{% block container %}
+<ol>
+    {% for student in students%}
+    <a href="{% url 'detail' student.id  %}">
+    <li>{{ student.full_name }} : {{student.path}} </li>
+    </a>
+    {%endfor%}
+</ol>
+
+
+{% endblock container %}

@@ -1,0 +1,37 @@
+{% extends 'register/base.html' %}
+{% load static %}
+
+{% block container %}
+    {{student.full_name}} - {{student.path}} {{student.phone_number}} {{ student.mail }} {{ student.student_number }} {{ student.gender }}
+    <br>
+    <a href="{% url 'update' student.id %}"><button>Update</button></a>
+    <a href="{% url 'delete' student.id %}"><button>Delete</button></a>
+
+<link rel="stylesheet" href=" {% static 'register/detail.css' %}  " />
+<div class="html">
+<div class="body">
+  <div class="card__flip" ontouchstart="this.classList.toggle('hover');">
+  <div class="card__container">
+    <div class="card card--front">
+      <img src="http://builtbybuffalo.com/uploads/images/300/460264537.jpg" alt="">
+      <h1>Gilles K</h1>
+      <h2>Front-end &amp; Fun</h2>
+      <p>Currently working and living in Luxembourg. Let's catch up!</p>
+      <div class="flip"><span>NOWNOW</span></div>
+    </div>
+    <div class="card card--back">
+      <dl>
+        <dt>Learning Vuejs</dt>
+        <dd>I have switched from learning React to learning Vuejs. And I like 😎</dd>
+        <dt>Work Life Balance</dt>
+        <dd>I try to maintain a healthy work/life balance. I try to get in early, work my 8 hours and get out to enjoy the sun!</dd>
+        <dt>Sports</dt>
+        <dd>I joined a triathlon club. These people are amazing. They do a different sport everyday. And they are good in all of them!</dd>
+      </dl>
+    </div> 
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock container %}

@@ -1,0 +1,12 @@
+{% extends "register/base.html" %} {% block container %}
+
+   <form action="" method="POST">
+    <h1>Student List</h1>
+        {% csrf_token %}                   
+        {{form.as_p}}						   
+        <input type="submit" value="add">
+    </form>
+
+    
+
+{% endblock container %}
