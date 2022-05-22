@@ -1,13 +1,12 @@
+
 {% extends 'register/base.html' %}
 {% load static %}
 
 {% block container %}
-  
-
-
 <link rel="stylesheet" href=" {% static 'register/detail.css' %}  " />
-<div class="html">
-<div class="body">
+<section class="html">
+<nav class="body">
+    <a href="{% url 'update' student.id %}"><button class="updateButton">Update</button></a>
   <div class="card__flip" ontouchstart="this.classList.toggle('hover');">
   <div class="card__container">
     <div class="card card--front">
@@ -18,7 +17,7 @@
       <div class="flip"><span>IT</span></div>
     </div>
     <div class="card card--back">
-      <dl>
+     <dl>
         <dt>Student Number</dt>
         <dd>{{ student.student_number }}</dd>
         <br>
@@ -30,12 +29,13 @@
       </dl>
     </div> 
   </div>
-</div class="buttons">
-    <a href="{% url 'update' student.id %}"><button class="updateButton">Update</button></a>
-    <a href="{% url 'delete' student.id %}"><button class="deleteButton">Delete</button></a>
-</div>
-</div>
 </div>
 
+
+
+    <a href="{% url 'delete' student.id %}"><button class="deleteButton">Delete</button></a>
+
+</nav>
+</section>
 
 {% endblock container %}

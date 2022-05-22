@@ -6,6 +6,7 @@
         <p style="text-align:center">Are You Sure!</p>
         {% csrf_token %}
         <input type="submit" value="Yes">
+        <br><br>
         <a  href="{% url 'list' %}"><input type="button" value="No"></a>
     </form>
 {% endblock container %}
