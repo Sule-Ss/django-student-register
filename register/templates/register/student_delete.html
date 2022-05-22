@@ -3,7 +3,8 @@
 
 {% block container %}
     <form action="" method="POST">
-        <p style="text-align:center">Are You Sure!</p>
+        <h5 style="text-align:center">Are you sure you want to delete student registration?</h5>
+        <br>
         {% csrf_token %}
         <input type="submit" value="Yes">
         <br><br>

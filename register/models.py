@@ -22,6 +22,7 @@ class Student(models.Model):
     gender = models.CharField(max_length=50, choices=GENDER, verbose_name="gender", blank=True)
     student_number = models.IntegerField(blank=True, null=True)
     path=models.ForeignKey(Path, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to = "register/", default= "profil.jpg") 
 
     def __str__(self):
         return f"{self.full_name}"

@@ -22,6 +22,7 @@ form {
   form input[type="search"],
   form input[type="time"],
   form input[type="url"],
+  form input[type="image"],
   #id_phone_number,
   form textarea,
   form select {
@@ -49,6 +50,7 @@ form {
   form input[type="search"]:focus,
   form input[type="time"]:focus,
   form input[type="url"]:focus,
+  form input[type="image"]:focus,
   #id_phone_number:focus,
   form textarea:focus,
   form select:focus {
@@ -78,6 +80,7 @@ form {
     background: #8e58da;
     cursor: pointer;
   }
+
 
   /* LIST STUDENT  */
 
