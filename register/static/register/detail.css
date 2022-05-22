@@ -105,11 +105,12 @@
 /* BUTTONS  */
 
  .buttons{
-   display: flex;
+ background-color: red;
+ border: 1px solid red;
  }
  
- button {background-image: linear-gradient(to right, #FF512F 0%, #7e1475  51%, #371db6  100%)}
- button {
+ .updateButton {background-image: linear-gradient(to right, #2fd5ff 0%, #3d0973  51%, #371db6  100%)}
+ .updateButton {
     margin: 1rem 2rem;
     padding: 0.7rem;
     text-align: center;
@@ -124,8 +125,34 @@
     cursor: pointer;
   }
  
-  button:hover {
+  .updateButton:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
+  }
+
+  .deleteButton {background-image: linear-gradient(to right, #b31a09 0%, #73091c  51%, #da3c3c  100%)}
+ .deleteButton {
+    margin: 1rem 2rem;
+    padding: 0.7rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    border-color: white;
+    display: block;
+    cursor: pointer;
+  }
+ 
+  .deleteButton:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .aButton{
+     display: inline-block;
   }

@@ -75,7 +75,7 @@ form {
   form input[type="submit"]:hover,
   form input[type="button"]:hover,
   .noButton:hover {
-    background: #c843d1;
+    background: #8e58da;
     cursor: pointer;
   }
 
