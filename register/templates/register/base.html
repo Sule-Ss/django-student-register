@@ -5,9 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link
       rel="stylesheet"
       href=" {% static 'fscohort/css/bootstrap.min.css' %}"
@@ -17,55 +20,55 @@
   </head>
   <body>
     {% comment %} {% include "users/navbar.html" %} {% endcomment %}
-     <nav class="navbar navColor">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button
-              type="button"
-              class="navbar-toggle"
-              data-toggle="collapse"
-              data-target="#myNavbar"
-            >
-              <span class="icon-bar spanColor"></span>
-              <span class="icon-bar spanColor"></span>
-              <span class="icon-bar spanColor"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'add' %}">Register</a>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-              {% comment %} <li class="active"><a href="{% url 'add' %}">Register</a></li> {% endcomment %}
-              <li><a href="{% url 'list' %}">Student List</a></li>
-              <li><a href="{% url 'about' %}">About</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="#"
-                  ><span class="glyphicon glyphicon-user"></span> Sign Up</a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><span class="glyphicon glyphicon-log-in"></span> Login</a
-                >
-              </li>
-            </ul>
-          </div>
+    <nav class="navbar navColor">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar spanColor"></span>
+            <span class="icon-bar spanColor"></span>
+            <span class="icon-bar spanColor"></span>
+          </button>
+          <a class="navbar-brand home" href="">Home</a>
         </div>
-      </nav>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+           
+            <li class="active"><a href="{% url 'add' %}">Student Add</a></li>
+            <li><a href="{% url 'list' %}">Student List</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#"
+                ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="glyphicon glyphicon-log-in"></span> Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-
-      {% block container %}
-      {% endblock container %} 
-      {% if messages %} 
-      {% for message in messages %} 
-    {% if message.tags == "error" %}
+      {% block container %} 
+      {% endblock container %}
+       {% if messages %}
+       {% for message in messages %} 
+       {% if message.tags == "error" %}
       <div class="alert alert-danger">{{ message }}</div>
       {% else %}
       <div class="alert alert-{{ message.tags }}">{{ message }}</div>
       {% endif %}
-       {% endfor %} 
-       {% endif %}
+       {% endfor %}
+        {% endif %}
     </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -83,5 +86,13 @@
       crossorigin="anonymous"
     ></script>
     <script src="{% static 'store/js/timeout.js' %}"></script>
+
+    <script>
+      let message = document.querySelector(".alert")
+
+      setTimeout(function () {
+        message.style.display = "none";
+      }, 2000);
+    </script>
   </body>
 </html>

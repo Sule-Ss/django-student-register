@@ -17,12 +17,12 @@ class Path(models.Model):
 
 class Student(models.Model):
     full_name = models.CharField(max_length=30)
-    phone_number = PhoneNumberField(null=False, blank=False, unique=True, verbose_name="Mobile")
+    phone_number = PhoneNumberField(null=False, blank=False, unique=True, region="US")
     mail = models.EmailField(verbose_name="Email")
     gender = models.CharField(max_length=50, choices=GENDER, verbose_name="gender", blank=True)
     student_number = models.IntegerField(blank=True, null=True)
     path=models.ForeignKey(Path, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to = "register/", default= "profil.jpg") 
+    image = models.ImageField(upload_to = "resimler", default= "profil.jpg") 
 
     def __str__(self):
         return f"{self.full_name}"

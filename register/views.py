@@ -23,7 +23,10 @@ def student_add(request):
         print(request.POST)				   
         form = StudentForm(request.POST)   
         if form.is_valid():				   
-            form.save()
+            student = form.save()
+            if 'image' in request.FILES:
+                student.profile_pic = request.FILES.get('profile_pic')
+                student.save()
             messages.success(request, "student created succesfully!")
             return redirect("list")					   
     context = {
@@ -53,6 +56,7 @@ def student_delete(request, id):
     student = Student.objects.get(id=id)
     if request.method == "POST":
         student.delete()
+        messages.success(request, "student delete succesfully!")
         return redirect("list")
     return render(request, "register/student_delete.html") 
 

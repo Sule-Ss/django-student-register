@@ -158,5 +158,18 @@ form {
   .spanColor{
     background-color: white;
   }
+
+  .home:hover{
+    background-color: white;
+  }
+
+  /* ALERT */
+
+  .alert{
+    width: auto;
+    text-align: center;
+    margin: 0 20px;
+  }
+
+
  
-  
