@@ -10,6 +10,7 @@ def about(request):
 #read
 def student_list(request):
     students  = Student.objects.all()
+    print("request print :", request.FILES)
     context = {
         'students': students,
     }
@@ -20,12 +21,13 @@ def student_list(request):
 def student_add(request):
     form = StudentForm() # boş form render edeceğiz
     if request.method == 'POST':          
-        print(request.POST)				   
+        # print(request.POST)				   
         form = StudentForm(request.POST)   
         if form.is_valid():				   
             student = form.save()
+            print("request print :", request.FILES)
             if 'image' in request.FILES:
-                student.profile_pic = request.FILES.get('profile_pic')
+                student.image = request.FILES.get('image')
                 student.save()
             messages.success(request, "student created succesfully!")
             return redirect("list")					   
@@ -42,7 +44,11 @@ def student_update(request, id):
     if request.method== "POST":
         form = StudentForm(request.POST, instance=student)
         if form.is_valid():
-            form.save()
+            student =  form.save()
+            print("print : ", request.FILES)
+            if 'image' in request.FILES:
+                student.image = request.FILES.get('image')
+                student.save()
             messages.success(request, "student update succesfully!")
             return redirect("list")   
     context = {

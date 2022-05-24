@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -22,7 +21,7 @@ class Student(models.Model):
     gender = models.CharField(max_length=50, choices=GENDER, verbose_name="gender", blank=True)
     student_number = models.IntegerField(blank=True, null=True)
     path=models.ForeignKey(Path, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to = "resimler", default= "profil.jpg") 
+    image = models.ImageField(upload_to = "image/", default= "profil.jpg") 
 
     def __str__(self):
         return f"{self.full_name}"
