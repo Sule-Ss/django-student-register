@@ -1,9 +1,43 @@
 {% extends 'base.html' %}
 
 {% block container %}
-<div>
-    <h1>Signup  Page</h1>
-</div>
+<form  method="POST">
+    {% csrf_token %}
+    <h1>SIGNUP</h1>
+
+    <div>
+        <label for="username">User Name</label>
+        <input type="text" name="username" value="{{ username }}">
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" value="{{ email }}">
+    </div>
+
+    <div>
+        <label for="firstname">First Name</label>
+        <input type="text" name="firstname" value="{{ firstname }}">
+    </div>
+
+    <div>
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" value="{{ lastname }}">
+    </div>
+
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" value="{{ password }}">
+    </div>
+
+    <div>
+        <label for="repassword">Re-Password</label>
+        <input type="password" name="repassword">
+    </div>
+
+    <input type="submit" value="Register">
+
+</form>
 
 
 {% endblock container %}

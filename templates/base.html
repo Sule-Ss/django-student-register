@@ -38,7 +38,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
            
-            <li class="active"><a href="{% url 'add' %}">Student Add</a></li>
+            <li class="active"><a href="{% url 'todo' %}">TODO</a></li>
+             <li class="active"><a href="{% url 'add' %}">Student Add</a></li>
             <li><a href="{% url 'list' %}">Student List</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
           </ul>
@@ -49,7 +50,7 @@
               <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
             </li>
             <li>
-              <a href=""><span class=""></span> Welcome</a>
+              <a href=""><span class="glyphicon glyphicon-user"></span> {{ user.username | title }}</a>
             </li>    
             
           {% else %}
@@ -106,7 +107,7 @@
 
       setTimeout(function () {
         message.style.display = "none";
-      }, 2000);
+      }, 3000);
     </script>
   </body>
 </html>

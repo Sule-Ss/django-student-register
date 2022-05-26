@@ -19,6 +19,11 @@ def student_list(request):
 #create
 
 def student_add(request):
+    # login olmayan kullanıcıları engellemek için :
+    if not request.user.is_authenticated:
+        messages.error(request, "Please login to access this page.")
+        return redirect("list")
+
     form = StudentForm() # boş form render edeceğiz
     if request.method == 'POST':          
         # print(request.POST)				   
@@ -39,6 +44,11 @@ def student_add(request):
 #update
 
 def student_update(request, id):
+    # login olmayan kullanıcıları engellemek için :
+    if not request.user.is_authenticated:
+        messages.error(request, "Please login to access this page.")
+        return redirect("list")
+
     student =Student.objects.get(id=id)
     form = StudentForm(instance=student)
     if request.method== "POST":
@@ -60,6 +70,11 @@ def student_update(request, id):
 
 #delete
 def student_delete(request, id):
+    # login olmayan kullanıcıları engellemek için :
+    if not request.user.is_authenticated:
+        messages.error(request, "Please login to access this page.")
+        return redirect("list")
+
     # student = get_object_or_404(Student, id=id)
     student = Student.objects.get(id=id)
     if request.method == "POST":
@@ -70,7 +85,12 @@ def student_delete(request, id):
 
 #detail
 
-def student_detail(request, id):        
+def student_detail(request, id):
+    # login olmayan kullanıcıları engellemek için :
+    if not request.user.is_authenticated:
+        messages.error(request, "Please login to access this page.")
+        return redirect("list")
+    messages.success(request, "student delete succesfully!")  
     student = Student.objects.get(id=id)
     context = {
         'student': student

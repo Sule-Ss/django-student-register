@@ -24,6 +24,7 @@ form {
   form input[type="url"],
   form input[type="image"],
   form input[type="password"],
+  form input,
   .password,
   #id_phone_number,
   form textarea,
