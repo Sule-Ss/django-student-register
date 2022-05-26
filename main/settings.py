@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # my appss:
     'todo',
     'register',
+    'account',
 
     'phonenumber_field',
 ]

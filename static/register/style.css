@@ -23,6 +23,8 @@ form {
   form input[type="time"],
   form input[type="url"],
   form input[type="image"],
+  form input[type="password"],
+  .password,
   #id_phone_number,
   form textarea,
   form select {
@@ -51,6 +53,8 @@ form {
   form input[type="time"]:focus,
   form input[type="url"]:focus,
   form input[type="image"]:focus,
+  form input[type="password"]:focus,
+  .password:focus,
   #id_phone_number:focus,
   form textarea:focus,
   form select:focus {
