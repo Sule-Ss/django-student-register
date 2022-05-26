@@ -46,6 +46,8 @@ def student_update(request, id):
         if form.is_valid():
             student =  form.save()
             print("print : ", request.FILES)
+            print("image : ", student.image)
+            # student.image.delete()
             if 'image' in request.FILES:
                 student.image = request.FILES.get('image')
                 student.save()
