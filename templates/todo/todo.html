@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block container %}
-<h1>Todo Page</h1>
+<link rel="stylesheet" href=" {% static 'todo/todo.css' %}  " />
+
+{% comment %} {% for student in students%} {% endcomment %}
+
+<form action="" method="post">
+	<h1>Add New Task</h1>
+	<input type="text" name="task" id="task">
+	<input type="submit" value="Add">
+</form>
+
 
 {% endblock container %}
